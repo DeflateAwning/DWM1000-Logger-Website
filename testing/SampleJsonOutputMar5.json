@@ -1,0 +1,76 @@
+{
+    "# Important Changes": "Move AnchorNumber to top level, add 'Date' to top level here",
+    
+    "BufferArray": [
+        {
+            "Range": 2.833374,
+            "Date": "2020-03-05 21:18:44.569",
+            "AnchorNumber": 1,
+            "Success": true,
+            "ReceivePower": -87.93546
+        },
+        {
+            "Range": 2.75723,
+            "Date": "2020-03-05 21:18:44.783",
+            "AnchorNumber": 1,
+            "Success": true,
+            "ReceivePower": -90.66875
+        },
+        {
+            "Range": 2.955127,
+            "Date": "2020-03-05 21:18:44.998",
+            "AnchorNumber": 1,
+            "Success": true,
+            "ReceivePower": -85.07732
+        },
+        {
+            "Range": 2.921442,
+            "Date": "2020-03-05 21:18:45.627",
+            "AnchorNumber": 1,
+            "Success": true,
+            "ReceivePower": -89.18772
+        },
+        {
+            "Range": 2.823839,
+            "Date": "2020-03-05 21:18:46.262",
+            "AnchorNumber": 1,
+            "Success": true,
+            "ReceivePower": -95.26427
+        },
+        {
+            "Range": 2.752531,
+            "Date": "2020-03-05 21:18:46.683",
+            "AnchorNumber": 1,
+            "Success": true,
+            "ReceivePower": -84.99808
+        },
+        {
+            "Range": 2.785381,
+            "Date": "2020-03-05 21:18:46.897",
+            "AnchorNumber": 1,
+            "Success": true,
+            "ReceivePower": -90.7257
+        },
+        {
+            "Range": 2.75723,
+            "Date": "2020-03-05 21:18:47.111",
+            "AnchorNumber": 1,
+            "Success": true,
+            "ReceivePower": -89.92526
+        },
+        {
+            "Range": 2.767689,
+            "Date": "2020-03-05 21:18:47.325",
+            "AnchorNumber": 1,
+            "Success": true,
+            "ReceivePower": -88.10397
+        },
+        {
+            "Range": 2.847298,
+            "Date": "2020-03-05 21:18:47.746",
+            "AnchorNumber": 1,
+            "Success": true,
+            "ReceivePower": null
+        }
+    ]
+}
