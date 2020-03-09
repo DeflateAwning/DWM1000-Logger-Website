@@ -1,3 +1,9 @@
+# Other web database things
+db.sqlite
+
+# Mac DS_STORE
+.DS_STORE
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
