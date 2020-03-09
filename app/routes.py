@@ -22,7 +22,7 @@ def route_Index():
 	
 	return render_template('home.jinja2', context=context)
 
-@app.route('/postRangeData', methods=['POST', 'GET'])
+@app.route('/postRangeData', methods=['POST'])
 def route_postRangeData():
 	"""
 	Adds a ranging request, sent from a microcontroller-based (ESP8266) anchor node, to the database.

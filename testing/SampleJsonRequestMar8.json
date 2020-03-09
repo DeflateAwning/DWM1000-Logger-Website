@@ -1,0 +1,36 @@
+{
+    "Date": "2020-03-09 00:31:51.604203",
+    "AnchorNumber": 5,
+    "BufferArray": [
+        {
+            "Range": 8.863693,
+            "Date": "2020-03-09 00:31:51.338671",
+            "Success": true,
+            "ReceivePower": -22.276954
+        },
+        {
+            "Range": 8.982034,
+            "Date": "2020-03-09 00:31:49.620725",
+            "Success": true,
+            "ReceivePower": -78.556443
+        },
+        {
+            "Range": 7.984364,
+            "Date": "2020-03-09 00:31:50.668604",
+            "Success": true,
+            "ReceivePower": -31.478705
+        },
+        {
+            "Range": 10.034202,
+            "Date": "2020-03-09 00:31:50.195799",
+            "Success": true,
+            "ReceivePower": -103.656308
+        },
+        {
+            "Range": 6.227731,
+            "Date": "2020-03-09 00:31:50.940937",
+            "Success": true,
+            "ReceivePower": -93.026622
+        }
+    ]
+}
