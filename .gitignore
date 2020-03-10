@@ -1,5 +1,6 @@
 # Other web database things
 db.sqlite
+migrations/
 
 # Mac DS_STORE
 .DS_STORE

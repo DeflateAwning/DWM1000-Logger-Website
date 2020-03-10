@@ -1,0 +1,88 @@
+{% extends 'layout.jinja2' %}
+{% from "includes/_form_macros.jinja2" import render_field %}
+
+{% block content %}
+
+	<h1 class="mt-5">UWBLS: Modify Anchors</h1>
+	<p>Change the settings for various anchors.</p>
+
+	<div class="card">
+		<div class="card-header">
+			Current Anchors
+		</div>
+
+		<div class="card-body">
+		    <table class="table table-striped" id="listOfAnchorsTable">
+		      <thead>
+		        <tr>
+		          <th>ID</th>
+		          <th>Anchor Number</th>
+		          <th>Location (Meters)</th>
+		          <th>Location (Steps)</th>
+		          <th>Enabled?</th>
+		          <th>Delete</th>
+		        </tr>
+		      </thead>
+		      <tbody>
+		        {% for anchor in context.anchors %}
+		          <tr>
+		            <td> {{ anchor.id }} </td>
+		            <td> {{ anchor.anchorNumber }} </td>
+		            <td> ({{ anchor.anchorCoordX }}, {{ anchor.anchorCoordY }})</td>
+		            <td> ({{ anchor.anchorCoordXSteps }}, {{ anchor.anchorCoordYSteps }})</td>
+		            <td> {{ anchor.enabled }} </td>
+		            <td><a href="/anchors/{{ anchor.id }}/delete">Delete</a></td>
+		          </tr>
+		        {% endfor %}
+
+		      </tbody>
+		    </table>
+
+		</div>
+
+	</div>
+
+	<br>
+
+	<div class="card">
+		<div class="card-header">
+			Add an Anchor
+		</div>
+
+		<div class="card-body">
+			
+		   <!-- flash messages -->
+			{% for error_message in get_flashed_messages(category_filter=["error"]) %}
+				<div class="alert alert-danger alert-dismissible">{{ error_message }}</div>
+			{% endfor %}
+
+			{% for success_message in get_flashed_messages(category_filter=["success"]) %}
+				<div class="alert alert-success alert-dismissible">{{ success_message }}</div>
+			{% endfor %}
+
+			{% for info_message in get_flashed_messages(category_filter=["info"]) %}
+				<div class="alert alert-info alert-dismissible">{{ info_message }}</div>
+			{% endfor %}
+
+	        <form action="/anchors/add" method="post">
+			    {{ addForm.csrf_token }}
+			    <dl>
+			      {{ render_field(addForm.anchorNumber, placeholder="Enter Anchor Number") }}
+			      {{ render_field(addForm.enabled, placeholder="Enable Anchor?") }}
+
+			      {{ render_field(addForm.anchorCoordX, placeholder="Enter Anchor X Coord (meters)") }}
+			      {{ render_field(addForm.anchorCoordY, placeholder="Enter Anchor X Coord (meters)") }}
+			      --- or ---
+			      {{ render_field(addForm.anchorCoordXSteps, placeholder="Enter Anchor Y Coord (steps)") }}
+			      {{ render_field(addForm.anchorCoordYSteps, placeholder="Enter Anchor Y Coord (steps)") }}
+			    </dl>
+			    <button class="btn btn-sm btn-success" type="submit">Add Anchor</button>
+			  </form>
+
+
+		</div>
+
+	</div>
+
+
+{% endblock %}

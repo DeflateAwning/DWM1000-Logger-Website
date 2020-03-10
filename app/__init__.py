@@ -16,7 +16,7 @@ app.config.from_pyfile('flask.cfg')
 
 
 db = SQLAlchemy(app)
-#bcrypt = Bcrypt(app)
+bcrypt = Bcrypt(app) # probably unused
 #mail = Mail(app)
 migrate = Migrate(app, db)
 

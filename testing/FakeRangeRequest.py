@@ -18,8 +18,9 @@ ucDateFormat = '%Y-%m-%d %H:%M:%S.%f' # date format from the microcontroller
 ##### Request Options ########
 
 # Time before current time the request came from
-minOldTime = -2
-maxOldTime = -0.05
+minRandomTimeDelta = 0
+maxRandomTimeDelta = 0.3
+#timeSep = 0.4
 
 minRange = 0.4
 maxRange = 15
@@ -28,6 +29,11 @@ maxAnchorNum = 5
 
 minReceivePower = -120
 maxReceivePower = -20
+
+minRangingRequestCount = 1
+maxRangingRequestCount = 9
+
+numTags = 1
 
 sleepTime = 1 # seconds
 
@@ -48,8 +54,9 @@ def sendARequest(numberOfRangingRequests=5):
 	"""
 
 	data = {
-		"Date": getCurrentTime(),
+		#"Date": getCurrentTime(numberOfRangingRequests*timeSep+maxRandomTimeDelta),
 		"AnchorNumber": random.randint(1, maxAnchorNum),
+		"AccountNumber": 1,
 
 		"BufferArray": []
 	}
@@ -57,10 +64,15 @@ def sendARequest(numberOfRangingRequests=5):
 	for i in range(numberOfRangingRequests):
 		data["BufferArray"].append({
 				"Range": randomUniform(minRange, maxRange),
-				"Date": getCurrentTime(random.uniform(minOldTime, maxOldTime)),
+				"Date": getCurrentTime(),
 				"Success": True,
-				"ReceivePower": randomUniform(minReceivePower, maxReceivePower)
+				"ReceivePower": randomUniform(minReceivePower, maxReceivePower),
+				"TagNumber": random.randint(1, numTags)
 			})
+
+		time.sleep(random.uniform(minRandomTimeDelta, maxRandomTimeDelta))
+
+	data["Date"] = getCurrentTime()
 
 	# Make the Request
 	r = requests.post(baseURL, json=data)
@@ -70,6 +82,6 @@ def sendARequest(numberOfRangingRequests=5):
 
 if __name__ == "__main__":
 	while 1:
-		sendARequest()
+		sendARequest(random.randint(minRangingRequestCount, maxRangingRequestCount))
 		time.sleep(sleepTime)
 
